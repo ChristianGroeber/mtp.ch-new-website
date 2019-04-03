@@ -1,7 +1,10 @@
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
+
 
 # Create your views here.
+from .models import Page
 
 
 def index(request):
-    return render(request, 'website/index.html')
+    page = get_object_or_404(Page, url="/")
+    return render(request, 'website/index.html', {'page': page})
