@@ -9,9 +9,8 @@ class Row(models.Model):
     text = models.CharField(max_length=1000, blank=True)
     # image = models.ImageField()
 
-
-class Content(models.Model):
-    rows = models.ManyToManyField(Row)
+    def __str__(self):
+        return self.title
 
 
 class Page(models.Model):
@@ -20,7 +19,7 @@ class Page(models.Model):
     title = models.CharField(max_length=200, blank=True)
     description = models.CharField(max_length=200, blank=True)
     show_on_page = models.BooleanField(default=True)
-    content = models.ManyToManyField(Content, blank=True)
+    content = models.ManyToManyField(Row, blank=True)
 
     def __str__(self):
         return self.name

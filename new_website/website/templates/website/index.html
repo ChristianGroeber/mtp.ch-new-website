@@ -22,6 +22,10 @@
 {% endblock %}
 
 {% block content %}
+
+{% for row in page.content.all %}
+{{ row }}
+{% endfor %}
 <section class="content apc banner no-padding " id="pos_3926">
                     <div class="slides" data-slick='{"autoplay": true, "autoplaySpeed": 5000}'>
                         <div class="item  takeover parallax c5-bg">
