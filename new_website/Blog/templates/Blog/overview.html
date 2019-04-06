@@ -1,1 +1,15 @@
 {% extends 'base.html' %}
+
+{% block title %}meinTrainingsplan.ch - Blog {% endblock %}
+
+{% block description %}meinTrainingsplan.ch Blog Page {% endblock %}
+
+
+{% block content %}
+{% for post in post_list %}
+<section class="blog_post">
+    <h1>{{post.title}}</h1>
+    <p class="post_description">{{ post.description }}</p>
+</section>
+{% endfor %}
+{% endblock %}
