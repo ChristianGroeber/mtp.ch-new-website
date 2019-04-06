@@ -29,6 +29,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'froala_editor',
     'Blog',
     'website',
     'django.contrib.admin',
