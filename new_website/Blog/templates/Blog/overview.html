@@ -1,15 +1,22 @@
 {% extends 'base.html' %}
 
+{% load static %}
+
 {% block title %}meinTrainingsplan.ch - Blog {% endblock %}
 
 {% block description %}meinTrainingsplan.ch Blog Page {% endblock %}
 
+{% block additional_css %}
+<link rel="stylesheet" href="{% static 'css/blog.css' %}">
+{% endblock %}
 
 {% block content %}
 {% for post in post_list %}
-<section class="blog_post">
+<a class="blog-post" href="/">
+    <div class="post">
     <h1>{{post.title}}</h1>
-    <p class="post_description">{{ post.description }}</p>
-</section>
+    {{ post.description }}
+</div>
+</a>
 {% endfor %}
 {% endblock %}
