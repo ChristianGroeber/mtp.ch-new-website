@@ -1,3 +1,5 @@
+import datetime
+
 from django.db import models
 
 # Create your models here.
@@ -27,6 +29,13 @@ class Post(models.Model):
     text = FroalaField()
     main_image = models.ImageField(blank=True, upload_to='post_images/')
     date_posted = models.DateField(default=timezone.now())
+    publish = models.BooleanField(default=True)
+    date_to_unpublish = models.DateField(blank=True)
 
     def __str__(self):
         return self.title
+
+    def check_if_unpublish(self):
+        print(type(datetime.datetime.now().date()))
+        if self.date_to_unpublish < datetime.datetime.now().date():
+            self.publish = False
