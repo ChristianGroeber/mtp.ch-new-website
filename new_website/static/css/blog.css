@@ -20,6 +20,16 @@ main{
     padding: 1rem;
 }
 
-img{
+img.post-image{
     width: 100%;
+}
+
+.post_author{
+    border: 1px solid rgba(225,226,229,1);
+    background-color: rgba(244,244,244,1);
+}
+
+img.author-image{
+    width: 150px !important;
+    max-height: 100%;
 }

@@ -1,7 +1,7 @@
 from django.shortcuts import render, get_object_or_404
 
 # Create your views here.
-from .models import Post
+from .models import Post, Author
 
 
 def overview(request):
@@ -11,5 +11,5 @@ def overview(request):
 
 def blog_post(request, id):
     post = get_object_or_404(Post, id=id)
-    print(post.main_image.url)
-    return render(request, 'Blog/blog_post.html', {'post': post})
+    author = get_object_or_404(Post, id=id).author
+    return render(request, 'Blog/blog_post.html', {'post': post, 'author': author})

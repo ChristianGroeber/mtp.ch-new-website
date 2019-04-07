@@ -13,7 +13,8 @@ class Author(models.Model):
     job = models.CharField(max_length=500, blank=True)
     is_coach = models.BooleanField(default=False)  # TODO connect to Coach Object
     birthday = models.DateField()
-    Image = models.ImageField(blank=True)
+    image = models.ImageField(blank=True, upload_to='author_images/')
+    about_the_author = FroalaField()
 
     def __str__(self):
         return str(self.first_name) + " " + str(self.name)
@@ -22,7 +23,7 @@ class Author(models.Model):
 class Post(models.Model):
     author = ForeignKey(Author, on_delete=models.CASCADE)
     title = models.CharField(max_length=50)
-    description = models.CharField(max_length=200)
+    description = models.CharField(max_length=500)
     text = FroalaField()
     main_image = models.ImageField(blank=True, upload_to='post_images/')
     date_posted = models.DateField(default=timezone.now())

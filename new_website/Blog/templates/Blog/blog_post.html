@@ -14,11 +14,20 @@
 {% block content %}
 <div class="row">
     <div class="col-sm-8">
-<div class="post {{ post.id }}">
-<h1>{{post.title}}</h1>
-<img class='post-image' src="{{post.main_image.url}}">
-    <h4>{{ post.description }}</h4>
-    {{ post.text|safe }}
+        <div class="post {{ post.id }}">
+            <h1>{{post.title}}</h1>
+            <img class='post-image' src="{{post.main_image.url}}">
+            <h4>{{ post.description }}</h4>
+            {{ post.text|safe }}
+            <div class="post_author row">
+                <div class="col-sm-8">
+                    <p>Geposted von {{ author.first_name }} {{ author.name }} am {{ post.date_posted }}</p>
+                    <h1>Über den Autor</h1>
+                    {{ author.about_the_author|safe }}
+                </div>
+                <img src="{{ author.image.url }}" width="200" height="200">
+            </div>
+        </div>
+    </div>
 </div>
-    </div></div>
 {% endblock %}
