@@ -22,7 +22,8 @@
 
 {% block content %}
 {% for post in post_list %}
-<div class="blog-post {{ post.id }}">
+<div class="blog-post {{ post.id }} col-sm-8">
+<img class="post-image" src="{{ post.main_image.url }}">
 <h1>{{post.title}}</h1>
     {{ post.description }}
 </div>
