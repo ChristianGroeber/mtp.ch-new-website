@@ -8,15 +8,23 @@
 
 {% block additional_css %}
 <link rel="stylesheet" href="{% static 'css/blog.css' %}">
+<script>
+    $(document).ready(function(){
+        $('.blog-post').click(function(){
+            var full_class = $(this).attr('class');
+            full_class = full_class.split(' ')[1];
+            console.log(full_class);
+            window.location.replace(full_class);
+        });
+    })
+</script>
 {% endblock %}
 
 {% block content %}
 {% for post in post_list %}
-<a class="blog-post" href="/">
-    <div class="post">
-    <h1>{{post.title}}</h1>
+<div class="blog-post {{ post.id }}">
+<h1>{{post.title}}</h1>
     {{ post.description }}
 </div>
-</a>
 {% endfor %}
 {% endblock %}
