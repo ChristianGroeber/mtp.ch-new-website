@@ -125,3 +125,6 @@ TEMPLATE_DIRS = (
 STATICFILES_DIRS = [
     os.path.join(SETTINGS_PATH, "static"),
 ]
+
+MEDIA_URL = '/media_cdn/'
+MEDIA_ROOT = os.path.join(BASE_DIR, "media_cdn")

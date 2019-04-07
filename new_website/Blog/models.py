@@ -1,9 +1,8 @@
-from datetime import datetime
-
 from django.db import models
 
 # Create your models here.
 from django.db.models import ForeignKey
+from django.utils import timezone
 from froala_editor.fields import FroalaField
 
 
@@ -25,8 +24,8 @@ class Post(models.Model):
     title = models.CharField(max_length=50)
     description = models.CharField(max_length=200)
     text = FroalaField()
-    main_image = models.ImageField(blank=True)
-    date_posted = models.DateField(default=datetime.now())
+    main_image = models.ImageField(blank=True, upload_to='post_images/')
+    date_posted = models.DateField(default=timezone.now())
 
     def __str__(self):
         return self.title

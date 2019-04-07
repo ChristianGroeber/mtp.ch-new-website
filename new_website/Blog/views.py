@@ -10,5 +10,6 @@ def overview(request):
 
 
 def blog_post(request, id):
-    post = get_object_or_404(Post, pk=id)
+    post = get_object_or_404(Post, id=id)
+    print(post.main_image.url)
     return render(request, 'Blog/blog_post.html', {'post': post})

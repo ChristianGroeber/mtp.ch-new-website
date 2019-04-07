@@ -12,8 +12,13 @@
 {% endblock %}
 
 {% block content %}
-<div class="blog-post {{ post.id }}">
+<div class="row">
+    <div class="col-sm-8">
+<div class="post {{ post.id }}">
 <h1>{{post.title}}</h1>
-    {{ post.description }}
+<img class='post-image' src="{{post.main_image.url}}">
+    <h4>{{ post.description }}</h4>
+    {{ post.text|safe }}
 </div>
+    </div></div>
 {% endblock %}
