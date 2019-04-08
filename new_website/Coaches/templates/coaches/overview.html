@@ -1,1 +1,11 @@
 {% extends 'base.html' %}
+
+{% block title %}meinTrainingsplan.ch - Finde deinen Coach{% endblock %}
+
+{% block description %}Finde deinen Coach{% endblock %}
+
+{% block content %}
+{% for coach in coaches %}
+<h1>{{ coach.name }}</h1>
+{% endfor %}
+{% endblock %}
