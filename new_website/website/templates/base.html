@@ -22,9 +22,24 @@
   <link href="{% static 'css/all.min.css' %}" rel="stylesheet" type="text/css">
 
   <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css?family=Merriweather+Sans:400,700" rel="stylesheet">
-  <link href='https://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,700italic' rel='stylesheet' type='text/css'>
-
+<link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet">
+  <style>
+  body{
+    font-family: 'Montserrat', sans-serif !important;
+  }
+  h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6{
+    font-family: inherit;
+    font-weight: 700 !important;
+    letter-spacing: -0.02em !important;
+    color: rgba(44,45,47,1) !important;
+  }
+  p{
+    font-family: inherit;
+    line-height: 1.4;
+    color: #555555 !important;
+    font-weight: 300 !important;
+  }
+  </style>
   <!-- Bootstrap core JavaScript -->
   <script src="{% static 'js/jquery.js' %}"></script>
   <script src="{% static 'js/bootstrap.bundle.js' %}"></script>
