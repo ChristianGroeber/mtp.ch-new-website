@@ -65,7 +65,7 @@
         <ul class="navbar-nav ml-auto my-2 my-lg-0">
             {% for page in pages %}
           <li class="nav-item">
-            <a class="nav-link js-scroll-trigger" href="{{ page.url }}">{{ page.name }}</a>
+            <a class="nav-link js-scroll-trigger" href="{% url page.url %}">{{ page.name }}</a>
           </li>
             {% endfor %}
           <li class="nav-item">

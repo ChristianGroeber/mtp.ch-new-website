@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block title %}meinTrainingsplan.ch | {{ coach.first_name }} {{ coach.name }}{% endblock %}
+
+{% block additional_css %}<link rel="stylesheet" href="{% static 'css/coaches.css' %}">{% endblock %}
+
+{% block content %}
+{{ coach.name }}
+{% endblock %}

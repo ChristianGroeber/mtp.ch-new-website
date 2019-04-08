@@ -22,8 +22,8 @@ from . import settings
 
 urlpatterns = [
     path('', include('website.urls')),
-    path('blog/', include('Blog.urls')),
-    path('finde-deinen-coach/', include('Coaches.urls')),
+    url('blog/', include('Blog.urls')),
+    url('finde-deinen-coach/', include('Coaches.urls')),
     path('admin/', admin.site.urls),
     url(r'^froala_editor/', include('froala_editor.urls')),
 ]

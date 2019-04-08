@@ -1,0 +1,17 @@
+.coach{
+    border: 1px solid rgba(0,0,0,0.75);
+    margin: 5px;
+}
+
+.coach:hover{
+    cursor: pointer;
+    box-shadow: 0 0 5px black;
+}
+
+img.coach-image{
+    max-width: 100%;
+}
+
+.row{
+    margin: 0 !important;
+}

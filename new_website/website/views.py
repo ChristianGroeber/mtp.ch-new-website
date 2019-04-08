@@ -6,5 +6,5 @@ from .models import Page
 
 
 def index(request):
-    page = get_object_or_404(Page, url="/")
+    page = get_object_or_404(Page, url="index")
     return render(request, 'website/index.html', {'page': page})

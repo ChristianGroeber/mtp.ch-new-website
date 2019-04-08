@@ -1,11 +1,33 @@
 {% extends 'base.html' %}
 
+{% load static %}
+
 {% block title %}meinTrainingsplan.ch - Finde deinen Coach{% endblock %}
 
 {% block description %}Finde deinen Coach{% endblock %}
 
+{% block additional_css %}
+<link rel="stylesheet" href="{% static 'css/coaches.css' %}">
+
+<script>
+    $(document).ready(function(){
+        $('.coach').click(function(){
+            var full_class = $(this).attr('class');
+            full_class = full_class.split(' ')[1];
+            console.log(full_class);
+            window.location.replace(full_class);
+        });
+    })
+</script>
+{% endblock %}
+
 {% block content %}
+<div class="row">
 {% for coach in coaches %}
+    <div class="coach {{ coach.first_name }}-{{ coach.name }} col-sm-3">
+        <img class="coach-image" src="{{ coach.image.url }}">
 <h1>{{ coach.name }}</h1>
+        </div>
 {% endfor %}
+</div>
 {% endblock %}

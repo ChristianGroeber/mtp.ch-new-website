@@ -4,7 +4,7 @@ from django.shortcuts import render, get_object_or_404, redirect
 from .models import Post, Author
 
 
-def overview(request):
+def blog(request):
     post_list = Post.objects.filter(publish=True).order_by('-date_posted')
     for post in post_list:
         post.check_if_unpublish()
