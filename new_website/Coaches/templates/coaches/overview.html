@@ -26,7 +26,8 @@
 {% for coach in coaches %}
     <div class="coach {{ coach.first_name }}-{{ coach.name }} col-sm-3">
         <img class="coach-image" src="{{ coach.image.url }}">
-<h1>{{ coach.name }}</h1>
+<h1>{{ coach }}</h1>
+        <p>{{ coach.about_me|safe|slice:'200'}}...</p>
         </div>
 {% endfor %}
 </div>

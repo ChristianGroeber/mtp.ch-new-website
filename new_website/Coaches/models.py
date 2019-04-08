@@ -31,6 +31,8 @@ class Coach(models.Model):
     rating = models.CharField(max_length=1, blank=True)
     sport_types = models.ManyToManyField(SportType)
     training_methods = models.ManyToManyField(TrainingMethod)
+    about_me = FroalaField(blank=True)
+    biography = FroalaField(blank=True)
 
     def __str__(self):
         return str(self.first_name) + " " + str(self.name)
