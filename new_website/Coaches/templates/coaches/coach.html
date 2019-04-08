@@ -7,5 +7,66 @@
 {% block additional_css %}<link rel="stylesheet" href="{% static 'css/coaches.css' %}">{% endblock %}
 
 {% block content %}
-{{ coach.name }}
+<h1>{{ coach }}</h1>
+<div class="row">
+    <div class="col-sm-4">
+    <img class="coach-image" src="{{ coach.image.url }}">
+    </div>
+        <div class="col-sm-8">
+        <h2>Über mich</h2>
+        {{ coach.about_me|safe }}
+    </div>
+</div>
+<div class="row">
+    <div class="col-sm-12">
+    <h2>Biografie</h2>
+    {{ coach.biography|safe }}
+        </div>
+</div>
+<div class="row">
+    <div class="col-sm-12">
+        <h2>Zertifikate und Ausbildungen</h2>
+        {{ coach.certificates|safe }}
+    </div>
+</div>
+<div class="row">
+    <div class="col-sm-12">
+        <h2>Wohnort</h2>
+        {{ coach.address }}
+    </div>
+</div>
+<div class="row">
+    <div class="col-sm-12">
+        <h2>Betreuung von Athleten auf Niveau:</h2>
+        TODO add niveau to models
+    </div>
+</div>
+<div class="row">
+    <div class="col-sm-12">
+        <h2>Sportart/en</h2>
+        <ul>
+        {% for sport_type in sport_types %}
+            <li>{{ sport_type }}</li>
+        {% endfor %}
+            </ul>
+    </div>
+</div>
+<div class="row">
+    <div class="col-sm-12">
+        <h2>Trainings Arten</h2>
+        <ul>
+            {% for trainings_method in training_methods %}
+            <li>{{ trainings_method }}</li>
+            {% endfor %}
+        </ul>
+    </div>
+</div>
+<div class="row">
+    <div class="col-sm-12">
+        <h2>Sprachen</h2>
+        <ul>
+            todo add languages
+        </ul>
+    </div>
+</div>
 {% endblock %}

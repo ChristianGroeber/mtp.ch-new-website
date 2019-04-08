@@ -11,5 +11,7 @@ def finde_deinen_coach(request):
 
 def coach(request, coach):
     sel_coach = get_object_or_404(Coach, first_name=coach.split('-')[0], name=coach.split('-')[1])
-    return render(request, 'coaches/coach.html', {'coach': sel_coach})
+    sport_types = sel_coach.sport_types.all()
+    training_methods = sel_coach.training_methods.all()
+    return render(request, 'coaches/coach.html', {'coach': sel_coach, 'sport_types': sport_types, 'training_methods': training_methods})
 
